@@ -13,6 +13,6 @@ Create on-page code blocks with syntax highlighting &amp; can be copy-pasta. 5/2
 
 ## 📄 Other things
 
-1. demo: see `index.html`, open in browser to see it in action
+1. demo: see `index.html`, open in browser to see it in action; click on the headings (H3) to expand the code blocks
 2. to do: one day figure out how to keep code indented in IDE but not have those indentations show up in web document
 3. maybe: pretty it up with some nice CSS lib?
