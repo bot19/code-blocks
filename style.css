@@ -27,25 +27,59 @@ p {
 }
 
 /* Custom CSS */
+:root {
+  --spacing-default: 20px;
+  --color-primary: #c678dd;
+}
+
 body {
-  padding: 20px;
+  padding: var(--spacing-default);
+}
+
+section {
+  margin: var(--spacing-default) 0;
+  padding: var(--spacing-default);
+  border: 1px solid var(--color-primary);
+}
+
+h3 {
+  cursor: pointer;
+}
+
+.code {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 1s;
 }
 
 .code-section {
-  border: 1px solid orchid;
-  margin: 20px 0;
-  padding: 20px;
   position: relative;
+  align-self: end;
+  min-height: 0;
+  background: lightgray;
+  transition: visibility 1s;
+  visibility: hidden;
+}
+
+.code.is-show {
+  grid-template-rows: 1fr;
+}
+
+.code.is-show .code-section {
+  visibility: visible;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px var(--spacing-default);
   cursor: pointer;
   background: none;
-  border: 3px solid black;
+  border: 3px solid white;
   position: absolute;
-  right: 20px;
+  top: var(--spacing-default);
+  right: var(--spacing-default);
   opacity: 25%;
+  color: white;
 }
 button:hover {
   transition: all 0.25s ease-in-out;

@@ -3,65 +3,154 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>My Boilerplate</title>
+    <title>Useful code blocks demo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>This is my boilerplate</h1>
-    <p>This is some text.</p>
+    <h1>Doing code blocks in HTML</h1>
+    <p>A simple counter in different flavours:</p>
 
-    <div class="code-section">
-      <button class="copy-button">Copy</button>
-      <div class="code-block">
-        <pre><code>
-private void example()
-{
-  int intNumA = 0;
-  
-  // We can access and read/modify intNumA here
-  
-  for (int i = 0; i < 10; i++)
-  {
-    // We can access intNumA here, because we are still within the original {}'s
-    intNumA = intNumA + 2;
-    i = intNumA * i;
-  }
-}
+    <section>
+      <h3>Plain JS</h3>
+      <div class="code">
+        <div class="code-section">
+          <button class="copy-button">Copy</button>
+          <div class="code-block">
+            <pre><code>
+              &lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
+              &lt;p&gt;Count:&nbsp;&lt;span&nbsp;id=&quot;count&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+              &lt;button&nbsp;onclick=&quot;increment()&quot;&gt;Increment&lt;/button&gt;
 
-private void anotherMethod()
-{
-  // We cannot see intNumA in here, because it is not within that block of {}'s
-}     
-        </code></pre>
+              &lt;script&gt;
+                var&nbsp;count&nbsp;=&nbsp;0;
+
+                function&nbsp;increment()&nbsp;{
+                &nbsp;&nbsp;count++;
+                &nbsp;&nbsp;document.getElementById(&quot;count&quot;).innerHTML&nbsp;=&nbsp;count;
+                }
+              &lt;/script&gt;
+            </code></pre>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="code-section">
-      <button class="copy-button">Copy</button>
-      <div class="code-block">
-        <pre><code>
-string strOne = "My name is: ";
-string strTwo = "Bob";
-Console.WriteLine(strOne + strTwo);
+    <section>
+      <h3>React.js</h3>
+      <div class="code">
+        <div class="code-section">
+          <button class="copy-button">Copy</button>
+          <div class="code-block">
+            <pre><code>
+              import&nbsp;React,&nbsp;{&nbsp;useState&nbsp;}&nbsp;from&nbsp;&quot;react&quot;;
 
+              const&nbsp;Counter&nbsp;=&nbsp;()&nbsp;=&gt;&nbsp;{
+              &nbsp;&nbsp;const&nbsp;[count,&nbsp;setCount]&nbsp;=&nbsp;useState(0);
 
-Output:
+              &nbsp;&nbsp;return&nbsp;(
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Count:&nbsp;{count}&lt;/p&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;onClick={()&nbsp;=&gt;&nbsp;setCount(count&nbsp;+&nbsp;1)}&gt;Increment&lt;/button&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+              &nbsp;&nbsp;);
+              };
 
-My name is: Bob  
-        </code></pre>
+              export&nbsp;default&nbsp;Counter;                   
+            </code></pre>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <script>
-      const copyBtns = document.querySelectorAll(".copy-button");
+    <section>
+      <h3>Vue.js</h3>
+      <div class="code">
+        <div class="code-section">
+          <button class="copy-button">Copy</button>
+          <div class="code-block">
+            <pre><code class="language-js">
+              &lt;script&nbsp;src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
 
-      for (const copyBtn of copyBtns) {
-        copyBtn.addEventListener("click", function () {
-          const localCode = this.nextElementSibling.innerText;
-          console.log("code copied:", localCode);
-          navigator.clipboard.writeText(localCode);
-        });
-      }
-    </script>
+              &lt;div&nbsp;id=&quot;app&quot;&gt;
+              &nbsp;&nbsp;&lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
+              &nbsp;&nbsp;&lt;p&gt;Count:&nbsp;{{&nbsp;count&nbsp;}}&lt;/p&gt;
+              &nbsp;&nbsp;&lt;button&nbsp;@click=&quot;increment&quot;&gt;Increment&lt;/button&gt;
+              &lt;/div&gt;
+
+              &lt;script&gt;
+              new&nbsp;Vue({
+              &nbsp;&nbsp;el:&nbsp;&quot;#app&quot;,
+              &nbsp;&nbsp;data:&nbsp;{
+              &nbsp;&nbsp;&nbsp;&nbsp;count:&nbsp;0,
+              &nbsp;&nbsp;},
+              &nbsp;&nbsp;methods:&nbsp;{
+              &nbsp;&nbsp;&nbsp;&nbsp;increment()&nbsp;{
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.count++;
+              &nbsp;&nbsp;&nbsp;&nbsp;},
+              &nbsp;&nbsp;},
+              });
+              &lt;/script&gt;          
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css"
+    integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"
+    integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script>
+    hljs.highlightAll();
+  </script>
+  <script>
+    // open close blocks
+    const accordionHeadings = document.querySelectorAll("h3");
+    const classShow = "is-show";
+
+    for (const heading of accordionHeadings) {
+      heading.addEventListener("click", function () {
+        const codeBlock = this.nextElementSibling;
+        const isOpened = codeBlock.classList.contains(classShow);
+
+        console.log(
+          "heading clicked:",
+          this.innerText,
+          this.nextElementSibling.classList,
+          isOpened
+        );
+
+        if (isOpened) {
+          // if opened > close
+          codeBlock.classList.remove(classShow);
+        } else {
+          // otherwise closed > open
+          codeBlock.classList.add(classShow);
+        }
+      });
+    }
+
+    // copy-pasta code
+    const copyBtns = document.querySelectorAll(".copy-button");
+
+    for (const btn of copyBtns) {
+      btn.addEventListener("click", function () {
+        const localCode = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(localCode);
+
+        console.log("code copied:", localCode);
+      });
+    }
+  </script>
 </html>
