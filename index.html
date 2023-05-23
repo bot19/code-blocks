@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>My Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>This is my boilerplate</h1>
+    <p>This is some text.</p>
+
+    <div class="code-section">
+      <button class="copy-button">Copy</button>
+      <div class="code-block">
+        <pre><code>
+private void example()
+{
+  int intNumA = 0;
+  
+  // We can access and read/modify intNumA here
+  
+  for (int i = 0; i < 10; i++)
+  {
+    // We can access intNumA here, because we are still within the original {}'s
+    intNumA = intNumA + 2;
+    i = intNumA * i;
+  }
+}
+
+private void anotherMethod()
+{
+  // We cannot see intNumA in here, because it is not within that block of {}'s
+}     
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="code-section">
+      <button class="copy-button">Copy</button>
+      <div class="code-block">
+        <pre><code>
+string strOne = "My name is: ";
+string strTwo = "Bob";
+Console.WriteLine(strOne + strTwo);
+
+
+Output:
+
+My name is: Bob  
+        </code></pre>
+      </div>
+    </div>
+
+    <script>
+      const copyBtns = document.querySelectorAll(".copy-button");
+
+      for (const copyBtn of copyBtns) {
+        copyBtn.addEventListener("click", function () {
+          const localCode = this.nextElementSibling.innerText;
+          console.log("code copied:", localCode);
+          navigator.clipboard.writeText(localCode);
+        });
+      }
+    </script>
+  </body>
+</html>

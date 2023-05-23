@@ -1,0 +1,53 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: auto;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* Custom CSS */
+body {
+  padding: 20px;
+}
+
+.code-section {
+  border: 1px solid orchid;
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: none;
+  border: 3px solid black;
+  position: absolute;
+  right: 20px;
+  opacity: 25%;
+}
+button:hover {
+  transition: all 0.25s ease-in-out;
+  opacity: 50%;
+}
