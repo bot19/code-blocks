@@ -17,18 +17,18 @@
           <button class="copy-button">Copy</button>
           <div class="code-block">
             <pre><code>
-              &lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
-              &lt;p&gt;Count:&nbsp;&lt;span&nbsp;id=&quot;count&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
-              &lt;button&nbsp;onclick=&quot;increment()&quot;&gt;Increment&lt;/button&gt;
-
-              &lt;script&gt;
-                var&nbsp;count&nbsp;=&nbsp;0;
-
-                function&nbsp;increment()&nbsp;{
-                &nbsp;&nbsp;count++;
-                &nbsp;&nbsp;document.getElementById(&quot;count&quot;).innerHTML&nbsp;=&nbsp;count;
-                }
-              &lt;/script&gt;
+  &lt;h1&gt;My Counter&lt;/h1&gt;
+  &lt;p&gt;Count: &lt;span id="count"&gt;0&lt;/span&gt;&lt;/p&gt;
+  &lt;button onclick="increment()"&gt;Increment&lt;/button&gt;
+  
+  &lt;script&gt;
+    var count = 0;
+  
+    function increment() {
+      count++;
+      document.getElementById("count").innerHTML = count;
+    }
+  &lt;/script&gt;
             </code></pre>
           </div>
         </div>
@@ -42,21 +42,21 @@
           <button class="copy-button">Copy</button>
           <div class="code-block">
             <pre><code>
-              import&nbsp;React,&nbsp;{&nbsp;useState&nbsp;}&nbsp;from&nbsp;&quot;react&quot;;
+  import React, { useState } from "react";
 
-              const&nbsp;Counter&nbsp;=&nbsp;()&nbsp;=&gt;&nbsp;{
-              &nbsp;&nbsp;const&nbsp;[count,&nbsp;setCount]&nbsp;=&nbsp;useState(0);
-
-              &nbsp;&nbsp;return&nbsp;(
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Count:&nbsp;{count}&lt;/p&gt;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;onClick={()&nbsp;=&gt;&nbsp;setCount(count&nbsp;+&nbsp;1)}&gt;Increment&lt;/button&gt;
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-              &nbsp;&nbsp;);
-              };
-
-              export&nbsp;default&nbsp;Counter;                   
+  const Counter = () =&gt; {
+    const [count, setCount] = useState(0);
+  
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;My Counter&lt;/h1&gt;
+        &lt;p&gt;Count: {count}&lt;/p&gt;
+        &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  };
+  
+  export default Counter;
             </code></pre>
           </div>
         </div>
@@ -70,27 +70,27 @@
           <button class="copy-button">Copy</button>
           <div class="code-block">
             <pre><code class="language-js">
-              &lt;script&nbsp;src=&quot;https://unpkg.com/vue&quot;&gt;&lt;/script&gt;
+  &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
 
-              &lt;div&nbsp;id=&quot;app&quot;&gt;
-              &nbsp;&nbsp;&lt;h1&gt;My&nbsp;Counter&lt;/h1&gt;
-              &nbsp;&nbsp;&lt;p&gt;Count:&nbsp;{{&nbsp;count&nbsp;}}&lt;/p&gt;
-              &nbsp;&nbsp;&lt;button&nbsp;@click=&quot;increment&quot;&gt;Increment&lt;/button&gt;
-              &lt;/div&gt;
-
-              &lt;script&gt;
-              new&nbsp;Vue({
-              &nbsp;&nbsp;el:&nbsp;&quot;#app&quot;,
-              &nbsp;&nbsp;data:&nbsp;{
-              &nbsp;&nbsp;&nbsp;&nbsp;count:&nbsp;0,
-              &nbsp;&nbsp;},
-              &nbsp;&nbsp;methods:&nbsp;{
-              &nbsp;&nbsp;&nbsp;&nbsp;increment()&nbsp;{
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.count++;
-              &nbsp;&nbsp;&nbsp;&nbsp;},
-              &nbsp;&nbsp;},
-              });
-              &lt;/script&gt;          
+  &lt;div id="app"&gt;
+    &lt;h1&gt;My Counter&lt;/h1&gt;
+    &lt;p&gt;Count: {{ count }}&lt;/p&gt;
+    &lt;button @click="increment"&gt;Increment&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;script&gt;
+    new Vue({
+      el: "#app",
+      data: {
+        count: 0,
+      },
+      methods: {
+        increment() {
+          this.count++;
+        },
+      },
+    });
+  &lt;/script&gt;
             </code></pre>
           </div>
         </div>
